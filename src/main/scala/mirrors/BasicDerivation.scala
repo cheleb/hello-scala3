@@ -15,14 +15,14 @@ object BasicDerivation {
       case s: Mirror.SumOf[T]     => sum(s, elemInstances)
       case p: Mirror.ProductOf[T] => product(p, elemInstances)
 
-  inline def summonInstances[T, M <: Tuple]: List[Eq[_]] =
+  inline def summonInstances[T, M <: Tuple]: List[Eq[?]] =
     inline erasedValue[M] match
       case _: EmptyTuple => Nil
       case _: (t *: ts)  => summonInline[Eq[t]] :: summonInstances[T, ts]
 
-  inline def sum[T](s: Mirror.SumOf[T], elems: List[Eq[_]]): Eq[T] =
+  inline def sum[T](s: Mirror.SumOf[T], elems: List[Eq[?]]): Eq[T] =
     ???
-  inline def product[T](p: Mirror.ProductOf[T], elems: List[Eq[_]]): Eq[T] =
+  inline def product[T](p: Mirror.ProductOf[T], elems: List[Eq[?]]): Eq[T] =
     compiletime.constValue[p.MirroredLabel]
     ???
 }
