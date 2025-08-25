@@ -5,11 +5,11 @@ import java.io.FileOutputStream
   println("Hello, Scala 3!")
 
   // Using the resource management function
-  withFile("example.txt") { out =>
+  withFile("target/example.txt") { out =>
     out.write("Hello, file!\n".getBytes)
   }
 
-  val nasty = withFile("log.txt")(out => (i: Int) => out.write(i))
+  val nasty = withFile("target/log.txt")(out => (i: Int) => out.write(i))
   nasty(1) // IOException
 
 def withFile[T](name: String)(f: OutputStream => T): T =
