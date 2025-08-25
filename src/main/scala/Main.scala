@@ -1,7 +1,20 @@
-@main def hello: Unit = 
-  println("Hello world!")
-  println(msg)
+import java.io.OutputStream
+import java.io.FileOutputStream
 
-def msg = "I was compiled by Scala 3. :)"
+@main def hello: Unit =
+  println("Hello, Scala 3!")
 
+  // Using the resource management function
+  withFile("example.txt") { out =>
+    out.write("Hello, file!\n".getBytes)
+  }
 
+  val nasty = withFile("log.txt")(out => (i: Int) => out.write(i))
+  nasty(1) // IOException
+
+def withFile[T](name: String)(f: OutputStream => T): T =
+  val out = new FileOutputStream(name) // Acquisition
+  val result = f(out)
+
+  out.close // Release
+  result

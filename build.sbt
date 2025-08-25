@@ -6,6 +6,10 @@ lazy val root = project
     name := "hello-scala3",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := scala3Version,
-    scalacOptions ++= Seq("-Xcheck-macros"),
+    scalacOptions ++= Seq(
+      "-Xcheck-macros",
+      "-language:experimental.captureChecking",
+      "-nowarn"
+    ),
     libraryDependencies += "org.scalameta" %% "munit" % "1.1.1" % Test
   )

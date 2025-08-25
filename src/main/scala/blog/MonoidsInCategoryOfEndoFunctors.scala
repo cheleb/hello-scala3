@@ -22,9 +22,9 @@ object MonoidsInCategoryOfEndoFunctors {
     def combine(a: T, b: T): T
 
     //
-    def unit: Unit => T = _ => empty
+    def unit: Unit -> T = _ => empty
 
-    def combine: ((T, T)) => T = t => combine(t._1, t._2)
+    def combine: ((T, T)) -> T = t => combine(t._1, t._2)
   }
 
   trait Functor[F[_]] {
