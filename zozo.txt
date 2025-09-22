@@ -1,0 +1,16 @@
+[info] welcome to sbt 1.10.1 (Homebrew Java 23)
+[info] loading settings for project hello-scala3-build-build from metals.sbt ...
+[info] loading project definition from /Users/olivier.nouguier/projects/cheleb/hellos/hello-scala3/project/project
+[info] loading settings for project hello-scala3-build from metals.sbt ...
+[info] loading project definition from /Users/olivier.nouguier/projects/cheleb/hellos/hello-scala3/project
+[success] Generated .bloop/hello-scala3-build.json
+[success] Total time: 1 s, completed Sep 26, 2024, 1:47:18 PM
+[info] loading settings for project root from build.sbt ...
+[info] set current project to hello-scala3 (in build file:/Users/olivier.nouguier/projects/cheleb/hellos/hello-scala3/)
+[info] hello-scala3:hello-scala3_3:0.1.0-SNAPSHOT
+[info]   +-org.scala-lang:scala3-library_3:3.4.2 [S]
+[info]   +-org.typelevel:shapeless3-deriving_3:3.4.0
+[info]     +-org.scala-lang:scala3-library_3:3.3.1 (evicted by: 3.4.2)
+[info]     +-org.scala-lang:scala3-library_3:3.4.2 [S]
+[info]     
+[success] Total time: 0 s, completed Sep 26, 2024, 1:47:19 PM
