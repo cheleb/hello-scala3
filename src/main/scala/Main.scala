@@ -10,10 +10,11 @@ import java.io.FileOutputStream
     out.write("Hello, file!\n".getBytes)
   }
 
-  val nasty = withFile("target/log.txt")(out => (i: Int) => out.write(i))
-  nasty(1) // IOException
+  // val nasty = withFile("target/log.txt")(out => (i: Int) => out.write(i))
 
-def withFile[T](name: String)(f: OutputStream => T): T =
+  // nasty(1) // IOException
+
+def withFile[T](name: String)(f: OutputStream^ => T): T =
   val out = new FileOutputStream(name) // Acquisition
   val result = f(out)
 

@@ -24,7 +24,7 @@ inline def deriveOrSummon[T, Elem]: Show[Elem] =
 inline def deriveRec[T, Elem]: Show[Elem] =
   inline erasedValue[T] match
     case _: Elem => error("infinite recursive derivation")
-    case _ =>
+    case _       =>
       Show.derived[Elem](using
         summonInline[Mirror.Of[Elem]]
       ) // recursive derivation
@@ -43,7 +43,7 @@ object Show:
       case s: Mirror.SumOf[T]     => showSum(s, elemInstances)
       case p: Mirror.ProductOf[T] => showProduct(elemInstances)
 
-  def showProduct[T](shows: => List[Show[?]]): Show[T] = // (1)
+  def showProduct[T](shows: -> List[Show[?]]): Show[T] = // (1)
     new Show[T]: // (2)
       def show(t: T): String =
         (t.asInstanceOf[Product]
@@ -54,7 +54,7 @@ object Show:
           }
           .mkString("{", ", ", "}") // (5
 
-  def showSum[T](s: Mirror.SumOf[T], elems: => List[Show[?]]): Show[T] =
+  def showSum[T](s: Mirror.SumOf[T], elems: -> List[Show[?]]): Show[T] =
     new Show[T]:
       def show(t: T): String =
         val index = s.ordinal(t) // (2)
