@@ -3,8 +3,8 @@ package blog
 object MonoidsInCategoryOfEndoFunctors {
 
   trait MostAbstractMonoid[T, ~>[_, _], U, P] {
-    def unit: U ~> T // same as ~>[U, T]
-    def combine: P ~> T
+    def unit: U => T // same as ~>[U, T]
+    def combine: P => T
   }
 
   trait GeneralMonoid[T, U, P] extends MostAbstractMonoid[T, Function1, U, P] {
@@ -22,9 +22,9 @@ object MonoidsInCategoryOfEndoFunctors {
     def combine(a: T, b: T): T
 
     //
-    def unit: Unit -> T = _ => empty
+    def unit: Unit => T = _ => empty
 
-    def combine: ((T, T)) -> T = t => combine(t._1, t._2)
+    def combine: ((T, T)) => T = t => combine(t._1, t._2)
   }
 
   trait Functor[F[_]] {
