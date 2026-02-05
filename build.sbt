@@ -21,5 +21,5 @@ lazy val root = project
       "-nowarn"
     ),
     libraryDependencies += "org.scalameta" %% "munit" % "1.2.2" % Test,
-    libraryDependencies += "dev.zio" %% "zio-json" % "0.8.0"
+    libraryDependencies += "dev.zio" %% "zio-json" % "0.9.0"
   )
