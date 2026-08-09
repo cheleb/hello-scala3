@@ -20,6 +20,6 @@ lazy val root = project
       "-language:experimental.captureChecking",
       "-nowarn"
     ),
-    libraryDependencies += "org.scalameta" %% "munit" % "1.3.4" % Test,
+    libraryDependencies += "org.scalameta" %% "munit" % "1.3.5" % Test,
     libraryDependencies += "dev.zio" %% "zio-json" % "0.10.0"
   )
