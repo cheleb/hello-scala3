@@ -4,6 +4,8 @@ import util.boundary
 import util.boundary.break
 import scala.concurrent.Future
 import java.io.FileOutputStream
+import scala.caps.cap
+
 
 object BrightFuture {
 
@@ -26,6 +28,16 @@ object BrightFuture {
 
 }
 
+class Counter:
+  def inc(): Counter = ???
+
+@main
+def counter =
+  val counter: Counter^ = Counter()
+  val counterB: Counter^ = Counter()
+  val incrementCaptureAny: () => Counter = () => counter.inc()
+  val increment: () ->{counter, counterB} Counter = () => counter.inc()
+
 
 def usingLogFile[T](op: FileOutputStream^ => T): T =
   val logFile = FileOutputStream("log.txt")
@@ -38,7 +50,7 @@ def iAmFine =
  usingLogFile: file =>
    file.write('0') 
 
-def test = 
+def testFiles = 
  usingLogFile: file =>
    val capturedFile: () ->{file} Unit = () => file.write('0')
    capturedFile()
