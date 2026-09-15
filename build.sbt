@@ -9,7 +9,8 @@ lazy val root = project
       // "-feature",
       // "-unchecked",
       // "-Xlint:-unused",
-      "-Xfatal-warnings"
+      "-Xfatal-warnings",
+      "-experimental"
     ),
     name := "hello-scala3",
     version := "0.1.0-SNAPSHOT",
