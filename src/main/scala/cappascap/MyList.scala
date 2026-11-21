@@ -1,7 +1,7 @@
 package cappascap
 
 import scala.collection.immutable.Nil as ListNil
-import scala.caps.cap
+
 
 enum MyList[+A]:
     case Nil
