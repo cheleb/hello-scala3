@@ -23,6 +23,9 @@ def withFile[T](name: String)(f: OutputStream^ => T): T =
 
 //given JsonEncoder[Person] = JsonEncoder.string.contramap(_.name)
 
+@main def helloWorld: Unit =
+  println("Hello, World! (Also: good night!)")
+
 @main def json: Unit =
   // given JsonEncoder[Person] = JsonEncoder.int.contramap(_.age)
   msg
