@@ -1,0 +1,1 @@
+{"header":{"startingBranch":"orca-worktree-6c2bacc1f8eb","branch":"sleep-30-second-hello-world-build","branchMode":"Created","userPrompt":"Sleep 30 second, build an hello world with message you received from either","flow":{"type":"Catalog","name":"quick.sc"},"startingCommit":"c57cb79d2f1a6362f45f3c26e43afdd992d06560","prReadiness":"Ready"},"entries":[],"stageStarts":[]}
